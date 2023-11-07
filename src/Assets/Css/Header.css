@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.search {
+    padding-left: 4rem;
+}
+.btn:hover {
+    color: white;
+}

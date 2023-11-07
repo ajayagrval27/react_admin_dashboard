@@ -1,0 +1,9 @@
+.accordion-item:last-of-type .accordion-button.collapsed {
+    font-size: 2rem !important;
+}
+.accordion-item:last-of-type .accordion-button {
+    font-size: 2rem !important;
+}
+.text-area {
+    width: 84%;
+}

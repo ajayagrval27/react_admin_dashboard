@@ -1,0 +1,148 @@
+[
+	{
+		"name": "firstName",
+		"conditions": [
+			{
+				"condition": "uData.userObj.firstName == 'undefined' || uData.userObj.firstName == ''",
+				"error": "First name is required"
+			},
+			{
+				"condition": "!/^[A-Z a-z]+$/.test(uData.userObj.firstName)",
+				"error": "First name should contain only alphabets"
+			},
+			{
+				"condition": "uData.userObj.firstName.length < 3",
+				"error": "First name should not be more than 3 characters"
+			}
+		]
+	},
+	{
+		"name": "lastName",
+		"conditions": [
+			{
+				"condition": "uData.userObj.lastName == 'undefined' || uData.userObj.lastName == ''",
+				"error": "Last name is required"
+			},
+			{
+				"condition": "!/^[A-Za-z]+$/.test(uData.userObj.lastName)",
+				"error": "Last name should contain only alphabets"
+			},
+			{
+				"condition": "uData.userObj.lastName.length < 3",
+				"error": "Last name should not be more than 3 characters"
+			}
+		]
+	},
+	{
+		"name": "email",
+		"conditions": [
+			{
+				"condition": "uData.userObj.email == 'undefined' || uData.userObj.email == ''",
+				"error": "Email is required"
+			},
+			{
+				"condition": "!(uData.userObj.email.includes('@gmail') || uData.userObj.email.includes('@mailinator') || uData.userObj.email.includes('@outlook'))",
+				"error": "Email should be either gmail or outlook"
+			}
+		]
+	},
+	{
+		"name": "password",
+		"conditions": [
+			{
+				"condition": "uData.userObj.password == 'undefined' || uData.userObj.password == ''",
+				"error": "Password is required"
+			},
+			{
+				"condition": "uData.userObj.password.length < 8",
+				"error": "Password should be more than 8 characters"
+			},
+			{
+				"condition": "uData.userObj.password === uData.userObj.confirmPassword",
+				"otherField": "confirmPassword"
+			},
+			{
+				"condition": "uData.userObj.password !== uData.userObj.confirmPassword && uData.userObj.confirmPassword !== ''",
+				"error": "Password and confirm password should be same",
+				"otherField": "confirmPassword"
+			},
+			{
+				"condition": "!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(uData.userObj.password)",
+				"error": "Password should contain atleast one uppercase, one lowercase, one number and one special character"
+			}
+		]
+	},
+	{
+		"name": "confirmPassword",
+		"conditions": [
+			{
+				"condition": "uData.userObj.confirmPassword == 'undefined' || uData.userObj.confirmPassword == ''",
+				"error": "Confirm password is required"
+			},
+			{
+				"condition": "uData.userObj.password !== uData.userObj.confirmPassword",
+				"error": "Password and confirm password should be same"
+			},
+			{
+				"condition": "uData.userObj.confirmPassword.length < 8",
+				"error": "Confirm password should be more than 8 characters"
+			},
+			{
+				"condition": "!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(uData.userObj.confirmPassword)",
+				"error": "Confirm password should contain atleast one uppercase, one lowercase, one number and one special character"
+			}
+		]
+	},
+	{
+		"name": "phoneNumber",
+		"conditions": [
+			{
+				"condition": "uData.userObj.phoneNumber == 'undefined' || uData.userObj.phoneNumber == ''",
+				"error": "Phone number is required"
+			},
+			{
+				"condition": "!/^[0-9]+$/.test(uData.userObj.phoneNumber)",
+				"error": "Phone number should contain only numbers"
+			},
+			{
+				"condition": "uData.userObj.phoneNumber.length !== 10",
+				"error": "Phone number should be 10 digits"
+			}
+		]
+	},
+	{
+		"name": "dob",
+		"conditions": [
+			{
+				"condition": "uData.userObj.dob == 'undefined' || uData.userObj.dob == ''",
+				"error": "Date of birth is required"
+			},
+			{
+				"condition": "validDate()",
+				"error": "Age should be 18 or more"
+			}
+		]
+	},
+	{
+		"name": "gender",
+		"conditions": [
+			{
+				"condition": "uData.userObj.gender == 'undefined' || uData.userObj.gender == ''",
+				"error": "Gender is required"
+			}
+		]
+	},
+	{
+		"name": "hobbies",
+		"conditions": [
+			{
+				"condition": "uData.userObj.hobbies == 'undefined' || uData.userObj.hobbies == ''",
+				"error": "Hobbies is required"
+			},
+			{
+				"condition": "uData.userObj.hobbies.length < 2",
+				"error": "Hobbies should be more than 2"
+			}
+		]
+	}
+]

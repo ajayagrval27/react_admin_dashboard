@@ -1,0 +1,20 @@
+
+.custom-toast-container {
+  width: 400px; /* Adjust the width as needed */
+}
+
+.custom-toast-popup {
+  font-size: 18px; /* Adjust the font size as needed */
+  border-radius: 12px;
+  /* Other styles as needed */
+}
+
+.custom-toast-title {
+  font-size: 21px; /* Adjust the font size for the title */
+  /* Other title styles as needed */
+}
+
+.custom-toast-content {
+  font-size: 18px; /* Adjust the font size for the content */
+  /* Other content styles as needed */
+}

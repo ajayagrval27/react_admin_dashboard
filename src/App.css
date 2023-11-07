@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar {
+    height: 86vh;
+    width: 250px;
+    background-color: white;
+    box-shadow: 3px 3px 5px 3px #ccc;
+    z-index: 2;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    /* height: 60px; */
+    /* width: 100%; */
+    padding: 8px 0;
+    box-shadow: 3px 3px 5px 3px #ccc;
+    z-index: 3;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+    text-decoration: none;
+    color: #9c27b0;
 }
-
-.App-link {
-  color: #61dafb;
+.logo > div {
+    padding-left: 4rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu li {
+    padding: 10px 10px;
+    margin: 5px 0;
+    transition: all 0.3s;
+    border-radius: 3px;
+}
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+.menu li:hover {
+    background-color:#9c27b0;
+    color: white;
+}
+.active li {
+    background-color: #9c27b0;
+    color: white;
+}
+.header input:focus {
+    outline: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #9c27b0;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    width: 6px;
 }

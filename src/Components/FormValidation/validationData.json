@@ -1,0 +1,131 @@
+[
+	{
+		"name": "firstName",
+		"conditions": [
+			{
+				"condition": "userObj.firstName == 'undefined' || userObj.firstName == ''",
+				"error": "First name is required"
+			},
+			{
+				"condition": "!/^[A-Z a-z]+$/.test(userObj.firstName)",
+				"error": "First name should contain only alphabets"
+			},
+			{
+				"condition": "userObj.firstName.length < 3",
+				"error": "First name should not be more than 3 characters"
+			}
+		]
+	},
+	{
+		"name": "lastName",
+		"conditions": [
+			{
+				"condition": "userObj.lastName == 'undefined' || userObj.lastName == ''",
+				"error": "Last name is required"
+			},
+			{
+				"condition": "!/^[A-Za-z]+$/.test(userObj.lastName)",
+				"error": "Last name should contain only alphabets"
+			},
+			{
+				"condition": "userObj.lastName.length < 3",
+				"error": "Last name should not be more than 3 characters"
+			}
+		]
+	},
+	{
+		"name": "email",
+		"conditions": [
+			{
+				"condition": "userObj.email == 'undefined' || userObj.email == ''",
+				"error": "Email is required"
+			},
+			{
+				"condition": "!(userObj.email.includes('@gmail') || userObj.email.includes('@outlook'))",
+				"error": "Email should be either gmail or outlook"
+			}
+		]
+	},
+	{
+		"name": "dob",
+		"conditions": [
+			{
+				"condition": "userObj.dob == 'undefined' || userObj.dob == ''",
+				"error": "Date of birth is required"
+			},
+			{
+				"condition": "validDate()",
+				"error": "Age should be 18 or more"
+			}
+		]
+	},
+	{
+		"name": "password",
+		"conditions": [
+			{
+				"condition": "userObj.password == 'undefined' || userObj.password == ''",
+				"error": "Password is required"
+			},
+			{
+				"condition": "userObj.password.length < 8",
+				"error": "Password should be more than 8 characters"
+			},
+			{
+				"condition": "userObj.password === userObj.confirmPassword",
+				"otherField": "confirmPassword"
+			},
+			{
+				"condition": "userObj.password !== userObj.confirmPassword && userObj.confirmPassword !== ''",
+				"error": "Password and confirm password should be same",
+				"otherField": "confirmPassword"
+			},
+			{
+				"condition": "!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(userObj.password)",
+				"error": "Password should contain atleast one uppercase, one lowercase, one number and one special character"
+			}
+		]
+	},
+	{
+		"name": "confirmPassword",
+		"conditions": [
+			{
+				"condition": "userObj.confirmPassword == 'undefined' || userObj.confirmPassword == ''",
+				"error": "Confirm password is required"
+			},
+			{
+				"condition": "userObj.password !== userObj.confirmPassword",
+				"error": "Password and confirm password should be same"
+			},
+			{
+				"condition": "userObj.confirmPassword.length < 8",
+				"error": "Confirm password should be more than 8 characters"
+			},
+			{
+				"condition": "!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/.test(userObj.confirmPassword)",
+				"error": "Confirm password should contain atleast one uppercase, one lowercase, one number and one special character"
+			}
+		]
+	},
+	{
+		"name": "gender",
+		"conditions": [
+			{
+				"condition": "userObj.gender == 'undefined' || userObj.gender == ''",
+				"error": "Gender is required"
+			}
+		]
+	},
+	{
+		"name": "hobbies",
+		"conditions": [
+			{
+				"condition": "userObj.hobbies == 'undefined' || userObj.hobbies == ''",
+				"error": "Hobbies is required"
+			},
+			{
+				"condition": "userObj.hobbies.length < 2",
+				"error": "Hobbies should be more than 2"
+			}
+		]
+	}
+]
